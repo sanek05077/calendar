@@ -80,6 +80,22 @@ aside {display:block;}
 	vertical-align:top;
 	margin:0 0 0 20px;
 	color:#000;
+	font-weight:bold;
+}
+.description-calendar .lightbox-01{
+	color:#094985;
+}
+.description-calendar .lightbox-02{
+	color:#a0060a;
+}
+.description-calendar .lightbox-03{
+	color:#936223;
+}
+.description-calendar .lightbox-04{
+	color:#225523;
+}
+.description-calendar .lightbox-05{
+	color:#656565;
 }
 #calendarBig {
 	width: 100%;
