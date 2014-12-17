@@ -98,17 +98,17 @@ $(document).ready(function(){
 		};
 		//это я писал, чтоб ссылки с разными класами генерились
 		$(document).ready(function(){
-			$('#calendarBig td[title="city-competitions"]').addClass("city-competitions");
-			$('#calendarBig td[title="marginal-competition"]').addClass("marginal-competition");
-			$('#calendarBig td[title="district-competition"]').addClass("district-competition");
-			$('#calendarBig td[title="russian-competition"]').addClass("russian-competition");
-			$('#calendarBig td[title="international-competitions"]').addClass("international-competitions");
+			$('#calendarBig td[title="lightbox-01"]').addClass("lightbox-01");
+			$('#calendarBig td[title="lightbox-02"]').addClass("lightbox-02");
+			$('#calendarBig td[title="lightbox-03"]').addClass("lightbox-03");
+			$('#calendarBig td[title="lightbox-04"]').addClass("lightbox-04");
+			$('#calendarBig td[title="lightbox-05"]').addClass("lightbox-05");
 		});
 		$(document).on("click", ".list-years li", function(){
-			$('#calendarBig td[title="city-competitions"]').addClass("city-competitions");
-			$('#calendarBig td[title="marginal-competition"]').addClass("marginal-competition");
-			$('#calendarBig td[title="district-competition"]').addClass("district-competition");
-			$('#calendarBig td[title="russian-competition"]').addClass("russian-competition");
-			$('#calendarBig td[title="international-competitions"]').addClass("international-competitions");
+			$('#calendarBig td[title="lightbox-01"]').addClass("lightbox-01");
+			$('#calendarBig td[title="lightbox-02"]').addClass("lightbox-02");
+			$('#calendarBig td[title="lightbox-03"]').addClass("lightbox-03");
+			$('#calendarBig td[title="lightbox-04"]').addClass("lightbox-04");
+			$('#calendarBig td[title="lightbox-05"]').addClass("lightbox-05");
 		});
 });
