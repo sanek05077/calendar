@@ -110,19 +110,19 @@ aside {display:block;}
 #calendarBig table tbody td.today { /* сегодня */ 
 	outline: 3px solid red;
 }
-#calendarBig table tbody td.city-competitions { 
+#calendarBig table tbody td.lightbox-01 { 
 	background: #094985;
 }
-#calendarBig table tbody td.marginal-competition { 
+#calendarBig table tbody td.lightbox-02 { 
 	background: #a0060a;
 }
-#calendarBig table tbody td.district-competition { 
+#calendarBig table tbody td.lightbox-03 { 
 	background: #936223;
 }
-#calendarBig table tbody td.russian-competition { 
+#calendarBig table tbody td.lightbox-04 { 
 	background: #225523;
 }
-#calendarBig table tbody td.international-competitions { 
+#calendarBig table tbody td.lightbox-05 { 
 	background: #656565;
 }
 #calendarBig table tbody td a {
