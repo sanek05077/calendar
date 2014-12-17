@@ -1,0 +1,140 @@
+
+body{
+	margin:0;
+	color:#000;
+	font:14px/24px Arial, sans-serif;
+	background:#fff;
+}
+img{border-style:none;}
+a{
+	color:#000;
+	text-decoration:none;
+}
+a:hover{text-decoration:underline; color:#000;}
+input,
+textarea,
+select{
+	color:#000;
+	vertical-align:middle;
+	font:100% Arial, Helvetica, sans-serif;
+}
+form,fieldset{
+	margin:0;
+	padding:0;
+	border-style:none;
+}
+a:focus,
+input:focus,
+textarea:focus,
+select:focus{outline:none;}
+header,
+section,
+nav,
+footer,
+main,
+aside {display:block;}
+/*wrapper*/
+.wrapper{
+	position:relative;
+	padding:46px 0 0;
+}
+/*calendar*/
+.list-years{
+	margin:0 0 0 -20px;
+	padding:0;
+	list-style:none;
+	text-align:center;
+	position:relative;
+}
+.list-years li{
+	display:inline-block;
+	vertical-align:top;
+	margin:0 0 0 20px;
+	color:#000;
+}
+.list-years li:hover{
+	cursor:pointer;
+}
+.list-years li:nth-child(2){
+	font-weight:bold;
+	color:#ff0000;
+}
+.list-years .prev-year{
+	position:absolute;
+	top:0;
+	left:0;
+}
+.list-years .next-year{
+	position:absolute;
+	top:0;
+	right:0;
+}
+.description-calendar{
+	margin:0 0 0 -20px;
+	padding:0;
+	list-style:none;
+	text-align:center;
+}
+.description-calendar li{
+	display:inline-block;
+	vertical-align:top;
+	margin:0 0 0 20px;
+	color:#000;
+}
+#calendarBig {
+	width: 100%;
+	max-width: 700px;
+	margin: 0 auto;
+	border-spacing: 0 1.5em;
+}
+#calendarBig td {
+	vertical-align: top;
+}
+
+#calendarBig table { /* таблицы с месяцами выравнены по верхней границе, горизонтально — по центру */ 
+	display: inline-table;
+}
+#calendarBig table thead tr:nth-child(1) { /* названия месяцев */ 
+	font-size: 110%;
+	font-weight: 700;
+	color:#000;
+}
+#calendarBig table thead tr:last-child { /* название дней недели */ 
+	font-size: small;
+	font-weight: 700;
+	color: rgb(103, 103, 103);
+}
+#calendarBig table tbody td { /* дни */ 
+	color: rgb(44, 86, 122);
+}
+#calendarBig table tbody td.today { /* сегодня */ 
+	outline: 3px solid red;
+}
+#calendarBig table tbody td.lightbox-01 { 
+	background: #094985;
+}
+#calendarBig table tbody td.lightbox-02 { 
+	background: #a0060a;
+}
+#calendarBig table tbody td.lightbox-03 { 
+	background: #936223;
+}
+#calendarBig table tbody td.lightbox-04 { 
+	background: #225523;
+}
+#calendarBig table tbody td.lightbox-05 { 
+	background: #656565;
+}
+#calendarBig table tbody td a {
+	display: block;
+	text-decoration: none;
+	color:#fff;
+}
+#calendarBig table tbody td[title] a:hover {
+	text-decoration:none;
+}
+.popus{
+	position:absolute;
+	top:-99999px;
+	left:-99999px;
+}
