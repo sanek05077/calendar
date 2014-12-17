@@ -89,12 +89,17 @@ $(document).ready(function(){
 		// вот это по идее переключение между годами. но оно не меняется ни хера. я пробовал поставить на список, там где
 		//предыдущий и следующий год, но не работает
 		calendarBig(new Date().getFullYear());
-		document.querySelector('.list-years-top > li:nth-child(1)').onclick = calendarBigG;
-		document.querySelector('.list-years-top > li:nth-child(3)').onclick = calendarBigG;
-		document.querySelector('.list-years-bottom > li:nth-child(1)').onclick = calendarBigG;
-		document.querySelector('.list-years-bottom > li:nth-child(3)').onclick = calendarBigG;
-		function calendarBigG(){
-			calendarBig(this.innerHTML.replace(/[^\d]/gi, ''));
+		var nextYear = document.querySelector('.list-years-top > li:nth-child(3)');
+		var prevYear = document.querySelector('.list-years-top > li:nth-child(1)');
+		var prevYearBtn = document.querySelector('.list-years-top > li:nth-child(4)');
+		var nextYearBtn = document.querySelector('.list-years-top > li:nth-child(5)');
+		prevYearBtn.onclick = calendarBigGprev;
+		nextYearBtn.onclick = calendarBigGnext;
+		function calendarBigGnext(){
+			calendarBig(nextYear.innerHTML.replace(/[^\d]/gi, ''));
+		};
+		function calendarBigGprev(){
+			calendarBig(prevYear.innerHTML.replace(/[^\d]/gi, ''));
 		};
 		//это я писал, чтоб ссылки с разными класами генерились
 		$(document).ready(function(){
