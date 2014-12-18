@@ -37,6 +37,8 @@ aside {display:block;}
 .wrapper{
 	position:relative;
 	padding:46px 0 0;
+	width:960px;
+	margin:0 auto;
 }
 /*calendar*/
 .list-years{
@@ -99,7 +101,6 @@ aside {display:block;}
 }
 #calendarBig {
 	width: 100%;
-	max-width: 700px;
 	margin: 0 auto;
 	border-spacing: 0 1.5em;
 }
@@ -108,7 +109,12 @@ aside {display:block;}
 }
 
 #calendarBig table { /* таблицы с месяцами выравнены по верхней границе, горизонтально — по центру */ 
-	display: inline-table;
+	width:100%;
+}
+#calendarBig table td{
+	border:1px solid #ccc;
+	border-collapse:collapse;
+	border-spacing:0;
 }
 #calendarBig table thead tr:nth-child(1) { /* названия месяцев */ 
 	font-size: 110%;
