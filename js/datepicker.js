@@ -1,5 +1,4 @@
 $(document).ready(function(){ 
-//функция, которая генерит таблицу с датами
 		function calendarBig(year){
 			for (var m = 0; m <= 11; m++) {
 				var D = new Date(year, [m],
@@ -53,7 +52,6 @@ $(document).ready(function(){
 					for (var i = DNlast; i < 7; i++) 
 						calendar += '<td>';
 				}
-				//это по ходу чтоб текст подставлялся в года при переключении
 				document.querySelector('#calendarBig table[data-m="' + [m] + '"] tbody').innerHTML = calendar;
 				document.querySelector('.list-years-top > li:nth-child(2)').innerHTML =year;
 				document.querySelector('.list-years-top > li:nth-child(1)').innerHTML = parseFloat(parseFloat(year) - 1);
@@ -61,7 +59,6 @@ $(document).ready(function(){
 				document.querySelector('.list-years-bottom > li:nth-child(2)').innerHTML =year;
 				document.querySelector('.list-years-bottom > li:nth-child(1)').innerHTML = parseFloat(parseFloat(year) - 1);
 				document.querySelector('.list-years-bottom > li:nth-child(3)').innerHTML =parseFloat(parseFloat(year) + 1);
-				//эта херня берет с html data атрибуты и вставляет их по определенным датам
 				for (var k = 1; k <= document.querySelectorAll('#calendarTable div').length; k++) {
 					var myD = document.querySelectorAll('#calendarBig table td'), my = document.querySelector('#calendarTable div:nth-child(' + [k] + ')');
 					for (var i = 0; i < myD.length; i++) {
@@ -86,22 +83,34 @@ $(document).ready(function(){
 				
 			}
 		};
-		// вот это по идее переключение между годами. но оно не меняется ни хера. я пробовал поставить на список, там где
-		//предыдущий и следующий год, но не работает
+		//top nav
 		calendarBig(new Date().getFullYear());
-		var nextYear = document.querySelector('.list-years-top > li:nth-child(3)');
-		var prevYear = document.querySelector('.list-years-top > li:nth-child(1)');
-		var prevYearBtn = document.querySelector('.list-years-top > li:nth-child(4)');
-		var nextYearBtn = document.querySelector('.list-years-top > li:nth-child(5)');
-		prevYearBtn.onclick = calendarBigGprev;
-		nextYearBtn.onclick = calendarBigGnext;
-		function calendarBigGnext(){
-			calendarBig(nextYear.innerHTML.replace(/[^\d]/gi, ''));
+		var nextYearTop = document.querySelector('.list-years-top > li:nth-child(3)');
+		var prevYearTop = document.querySelector('.list-years-top > li:nth-child(1)');
+		var prevYearBtnTop = document.querySelector('.list-years-top > li:nth-child(4)');
+		var nextYearBtnTop = document.querySelector('.list-years-top > li:nth-child(5)');
+		prevYearBtnTop.onclick = calendarBigGprevTop;
+		nextYearBtnTop.onclick = calendarBigGnextTop;
+		function calendarBigGnextTop(){
+			calendarBig(nextYearTop.innerHTML.replace(/[^\d]/gi, ''));
 		};
-		function calendarBigGprev(){
-			calendarBig(prevYear.innerHTML.replace(/[^\d]/gi, ''));
+		function calendarBigGprevTop(){
+			calendarBig(prevYearTop.innerHTML.replace(/[^\d]/gi, ''));
 		};
-		//это я писал, чтоб ссылки с разными класами генерились
+		//bottom nav
+		calendarBig(new Date().getFullYear());
+		var nextYearBottom = document.querySelector('.list-years-bottom > li:nth-child(3)');
+		var prevYearBottom = document.querySelector('.list-years-bottom > li:nth-child(1)');
+		var prevYearBtnBottom = document.querySelector('.list-years-bottom > li:nth-child(4)');
+		var nextYearBtnBottom = document.querySelector('.list-years-bottom > li:nth-child(5)');
+		prevYearBtnBottom.onclick = calendarBigGprevBottom;
+		nextYearBtnBottom.onclick = calendarBigGnextBottom;
+		function calendarBigGnextBottom(){
+			calendarBig(nextYearBottom.innerHTML.replace(/[^\d]/gi, ''));
+		};
+		function calendarBigGprevBottom(){
+			calendarBig(prevYearBottom.innerHTML.replace(/[^\d]/gi, ''));
+		};
 		$(document).ready(function(){
 			$('#calendarBig td[title="lightbox-01"]').addClass("lightbox-01");
 			$('#calendarBig td[title="lightbox-02"]').addClass("lightbox-02");

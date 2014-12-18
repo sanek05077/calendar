@@ -42,7 +42,7 @@ aside {display:block;}
 }
 /*calendar*/
 .list-years{
-	margin:0 0 0 -20px;
+	margin:0 0 40px -20px;
 	padding:0;
 	list-style:none;
 	text-align:center;
@@ -71,8 +71,16 @@ aside {display:block;}
 	top:0;
 	right:0;
 }
+.list-years-bottom{
+	padding:40px 0 0;
+	border-top:2px solid #ccc;
+}
+.list-years-bottom .next-year,
+.list-years-bottom .prev-year{
+	top:40px;
+}
 .description-calendar{
-	margin:0 0 0 -20px;
+	margin:0 0 40px -20px;
 	padding:0;
 	list-style:none;
 	text-align:center;
@@ -99,60 +107,74 @@ aside {display:block;}
 .description-calendar .lightbox-05{
 	color:#656565;
 }
-#calendarBig {
+#calendar {
 	width: 100%;
-	margin: 0 auto;
-	border-spacing: 0 1.5em;
+	margin: 0 auto 40px;
+	border-spacing: 0;
+	border-collapse:collapse;
 }
-#calendarBig td {
+#calendar td {
 	vertical-align: top;
+	padding:0;
 }
 
-#calendarBig table { /* таблицы с месяцами выравнены по верхней границе, горизонтально — по центру */ 
-	width:100%;
+#calendar table { 
+	border-collapse:collapse;
+	border-spacing:0;
+	margin:0 0 20px 10%;
+	border:1px solid #ccc;
+	width:89%;
 }
-#calendarBig table td{
+#calendar table .week{
+	color:#ccc;
+	background:#ff0000;
+}
+#calendar table thead tr:first-child td{
+	text-align:left;
+	color:#fff;
+	background:#ccc;
+	border:0;
+	text-align:center;
+}
+#calendar table thead tr:first-child{
+	border:1px solid #000;
+}
+#calendar table td{
 	border:1px solid #ccc;
 	border-collapse:collapse;
 	border-spacing:0;
+	border-width:0 1px;
+	text-align:right;
+	vertical-align:middle;
+	padding:0 5px;
 }
-#calendarBig table thead tr:nth-child(1) { /* названия месяцев */ 
-	font-size: 110%;
-	font-weight: 700;
-	color:#000;
+#calendar table tbody td {
+	width:14%;
 }
-#calendarBig table thead tr:last-child { /* название дней недели */ 
-	font-size: small;
-	font-weight: 700;
-	color: rgb(103, 103, 103);
-}
-#calendarBig table tbody td { /* дни */ 
-	color: rgb(44, 86, 122);
-}
-#calendarBig table tbody td.today { /* сегодня */ 
+#calendar table tbody td.today {
 	outline: 3px solid red;
 }
-#calendarBig table tbody td.lightbox-01 { 
+#calendar table td.lightbox-01 { 
 	background: #094985;
 }
-#calendarBig table tbody td.lightbox-02 { 
+#calendar table td.lightbox-02 { 
 	background: #a0060a;
 }
-#calendarBig table tbody td.lightbox-03 { 
+#calendar table td.lightbox-03 { 
 	background: #936223;
 }
-#calendarBig table tbody td.lightbox-04 { 
+#calendar table td.lightbox-04 { 
 	background: #225523;
 }
-#calendarBig table tbody td.lightbox-05 { 
+#calendar table td.lightbox-05 { 
 	background: #656565;
 }
-#calendarBig table tbody td a {
+#calendar table td a {
 	display: block;
 	text-decoration: none;
 	color:#fff;
 }
-#calendarBig table tbody td[title] a:hover {
+#calendar table td a:hover {
 	text-decoration:none;
 }
 .popus{
