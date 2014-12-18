@@ -5,14 +5,14 @@ $(document).ready(function(){
 				
 				
 				var D = new Date(year, [m],
-				new Date().getDate()),
-				Dlast = new Date(D.getFullYear(),
-				D.getMonth() + 1, 0).getDate(),
-				DNlast = new Date(D.getFullYear(),
-				D.getMonth(), Dlast).getDay(),
-				DNfirst = new Date(D.getFullYear(),
-				D.getMonth(), 1).getDay(),
-				calendar = '<tr>';
+					new Date().getDate()),
+					Dlast = new Date(D.getFullYear(),
+					D.getMonth() + 1, 0).getDate(),
+					DNlast = new Date(D.getFullYear(),
+					D.getMonth(), Dlast).getDay(),
+					DNfirst = new Date(D.getFullYear(),
+					D.getMonth(), 1).getDay(),
+					calendar = '<tr>';
 				
 				
 				//creating calendar
@@ -42,20 +42,21 @@ $(document).ready(function(){
 						calendar += '<td>';
 				};
 				
-				document.querySelector('#calendarBig table[data-m="' + [m] + '"] tbody').innerHTML = calendar;
-				document.querySelector('.list-years-top > li:nth-child(2)').innerHTML =year;
-				document.querySelector('.list-years-top > li:nth-child(1)').innerHTML = parseFloat(parseFloat(year) - 1);
-				document.querySelector('.list-years-top > li:nth-child(3)').innerHTML =parseFloat(parseFloat(year) + 1);
-				document.querySelector('.list-years-bottom > li:nth-child(2)').innerHTML =year;
-				document.querySelector('.list-years-bottom > li:nth-child(1)').innerHTML = parseFloat(parseFloat(year) - 1);
-				document.querySelector('.list-years-bottom > li:nth-child(3)').innerHTML =parseFloat(parseFloat(year) + 1);
+				$('#calendar table[data-m="' + [m] + '"] tbody').html(calendar);
+				$('.list-years-top > li:nth-child(2)').html(year);
+				$('.list-years-top > li:nth-child(1)').html(parseFloat(parseFloat(year) - 1));
+				$('.list-years-top > li:nth-child(3)').html(parseFloat(parseFloat(year) + 1));
+				$('.list-years-bottom > li:nth-child(2)').html(year);
+				$('.list-years-bottom > li:nth-child(1)').html(parseFloat(parseFloat(year) - 1));
+				$('.list-years-bottom > li:nth-child(3)').html(parseFloat(parseFloat(year) + 1));
 				
 				
 				//creating links for modal window
 				
 				
-				for (var k = 1; k <= document.querySelectorAll('#calendarTable div').length; k++) {
-					var myD = document.querySelectorAll('#calendarBig table td'), my = document.querySelector('#calendarTable div:nth-child(' + [k] + ')');
+				for (var k = 1; k <= $('#popup-links div').length; k++) {
+					var myD = document.querySelectorAll('#calendar table td'), 
+						my = document.querySelector('#popup-links div:nth-child(' + [k] + ')');
 					for (var i = 0; i < myD.length; i++) {
 						if (my.dataset.yyyy) {
 							if (myD[i].innerHTML == my.dataset.dd && myD[i].parentNode.parentNode.parentNode.dataset.m == (my.dataset.mm - 1) && year == my.dataset.yyyy) {
@@ -75,6 +76,8 @@ $(document).ready(function(){
 					};
 				};
 				
+				
+				
 			};
 		};
 		
@@ -83,10 +86,10 @@ $(document).ready(function(){
 		
 		
 		calendarBig(new Date().getFullYear());
-		var nextYearTop = document.querySelector('.list-years-top > li:nth-child(3)');
-		var prevYearTop = document.querySelector('.list-years-top > li:nth-child(1)');
-		var prevYearBtnTop = document.querySelector('.list-years-top > li:nth-child(4)');
-		var nextYearBtnTop = document.querySelector('.list-years-top > li:nth-child(5)');
+		var nextYearTop = document.querySelector('.list-years-top > li:nth-child(3)'),
+			prevYearTop = document.querySelector('.list-years-top > li:nth-child(1)'),
+			prevYearBtnTop = document.querySelector('.list-years-top > li:nth-child(4)'),
+			nextYearBtnTop = document.querySelector('.list-years-top > li:nth-child(5)');
 		prevYearBtnTop.onclick = calendarBigGprevTop;
 		nextYearBtnTop.onclick = calendarBigGnextTop;
 		function calendarBigGnextTop(){
@@ -101,10 +104,10 @@ $(document).ready(function(){
 		
 		
 		calendarBig(new Date().getFullYear());
-		var nextYearBottom = document.querySelector('.list-years-bottom > li:nth-child(3)');
-		var prevYearBottom = document.querySelector('.list-years-bottom > li:nth-child(1)');
-		var prevYearBtnBottom = document.querySelector('.list-years-bottom > li:nth-child(4)');
-		var nextYearBtnBottom = document.querySelector('.list-years-bottom > li:nth-child(5)');
+		var nextYearBottom = document.querySelector('.list-years-bottom > li:nth-child(3)'),
+			prevYearBottom = document.querySelector('.list-years-bottom > li:nth-child(1)'),
+			prevYearBtnBottom = document.querySelector('.list-years-bottom > li:nth-child(4)'),
+			nextYearBtnBottom = document.querySelector('.list-years-bottom > li:nth-child(5)');
 		prevYearBtnBottom.onclick = calendarBigGprevBottom;
 		nextYearBtnBottom.onclick = calendarBigGnextBottom;
 		function calendarBigGnextBottom(){
@@ -119,11 +122,11 @@ $(document).ready(function(){
 		
 		
 		$(document).ready(function(){
-			$('#calendarBig td[title="lightbox-01"]').addClass("lightbox-01");
-			$('#calendarBig td[title="lightbox-02"]').addClass("lightbox-02");
-			$('#calendarBig td[title="lightbox-03"]').addClass("lightbox-03");
-			$('#calendarBig td[title="lightbox-04"]').addClass("lightbox-04");
-			$('#calendarBig td[title="lightbox-05"]').addClass("lightbox-05");
+			$('#calendar td[title="lightbox-01"]').addClass("lightbox-01");
+			$('#calendar td[title="lightbox-02"]').addClass("lightbox-02");
+			$('#calendar td[title="lightbox-03"]').addClass("lightbox-03");
+			$('#calendar td[title="lightbox-04"]').addClass("lightbox-04");
+			$('#calendar td[title="lightbox-05"]').addClass("lightbox-05");
 		});
 		
 		
@@ -131,10 +134,10 @@ $(document).ready(function(){
 		
 		
 		$(document).on("click", ".list-years li", function(){
-			$('#calendarBig td[title="lightbox-01"]').addClass("lightbox-01");
-			$('#calendarBig td[title="lightbox-02"]').addClass("lightbox-02");
-			$('#calendarBig td[title="lightbox-03"]').addClass("lightbox-03");
-			$('#calendarBig td[title="lightbox-04"]').addClass("lightbox-04");
-			$('#calendarBig td[title="lightbox-05"]').addClass("lightbox-05");
+			$('#calendar td[title="lightbox-01"]').addClass("lightbox-01");
+			$('#calendar td[title="lightbox-02"]').addClass("lightbox-02");
+			$('#calendar td[title="lightbox-03"]').addClass("lightbox-03");
+			$('#calendar td[title="lightbox-04"]').addClass("lightbox-04");
+			$('#calendar td[title="lightbox-05"]').addClass("lightbox-05");
 		});
 });
