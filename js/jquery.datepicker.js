@@ -60,6 +60,7 @@ $(document).ready(function(){
 					for (var i = 0; i < myD.length; i++) {
 						if (my.dataset.yyyy) {
 							if (myD[i].innerHTML == my.dataset.dd && myD[i].parentNode.parentNode.parentNode.dataset.m == (my.dataset.mm - 1) && year == my.dataset.yyyy) {
+								myD[i].abbr = my.dataset.cls;
 								myD[i].title = my.dataset.text;
 								if (my.dataset.link) {
 									myD[i].innerHTML = '<a href="' + my.dataset.link + '" class="fancy">' + myD[i].innerHTML + '</a>';
@@ -67,6 +68,7 @@ $(document).ready(function(){
 							}
 						}else {
 							if (myD[i].innerHTML == my.dataset.dd && myD[i].parentNode.parentNode.parentNode.dataset.m == (my.dataset.mm - 1)) {
+								myD[i].abbr = my.dataset.cls;
 								myD[i].title = my.dataset.text;
 								if (my.dataset.link) {
 									myD[i].innerHTML = '<a href="' + my.dataset.link + '" class="fancy">' + myD[i].innerHTML + '</a>';
@@ -122,11 +124,11 @@ $(document).ready(function(){
 		
 		
 		$(document).ready(function(){
-			$('#calendar td[title="lightbox-01"]').addClass("lightbox-01");
-			$('#calendar td[title="lightbox-02"]').addClass("lightbox-02");
-			$('#calendar td[title="lightbox-03"]').addClass("lightbox-03");
-			$('#calendar td[title="lightbox-04"]').addClass("lightbox-04");
-			$('#calendar td[title="lightbox-05"]').addClass("lightbox-05");
+			$('#calendar td[abbr="lightbox-01"]').addClass("lightbox-01");
+			$('#calendar td[abbr="lightbox-02"]').addClass("lightbox-02");
+			$('#calendar td[abbr="lightbox-03"]').addClass("lightbox-03");
+			$('#calendar td[abbr="lightbox-04"]').addClass("lightbox-04");
+			$('#calendar td[abbr="lightbox-05"]').addClass("lightbox-05");
 		});
 		
 		
@@ -134,10 +136,10 @@ $(document).ready(function(){
 		
 		
 		$(document).on("click", ".list-years li", function(){
-			$('#calendar td[title="lightbox-01"]').addClass("lightbox-01");
-			$('#calendar td[title="lightbox-02"]').addClass("lightbox-02");
-			$('#calendar td[title="lightbox-03"]').addClass("lightbox-03");
-			$('#calendar td[title="lightbox-04"]').addClass("lightbox-04");
-			$('#calendar td[title="lightbox-05"]').addClass("lightbox-05");
+			$('#calendar td[abbr="lightbox-01"]').addClass("lightbox-01");
+			$('#calendar td[abbr="lightbox-02"]').addClass("lightbox-02");
+			$('#calendar td[abbr="lightbox-03"]').addClass("lightbox-03");
+			$('#calendar td[abbr="lightbox-04"]').addClass("lightbox-04");
+			$('#calendar td[abbr="lightbox-05"]').addClass("lightbox-05");
 		});
 });

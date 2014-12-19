@@ -152,7 +152,7 @@ aside {display:block;}
 	width:14%;
 }
 #calendar table tbody td.today {
-	outline: 3px solid red;
+	outline: 3px solid #ff0000;
 }
 #calendar table td.lightbox-01 { 
 	background: #094985;
