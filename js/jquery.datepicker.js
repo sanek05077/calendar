@@ -60,6 +60,7 @@ $(document).ready(function(){
 					for (var i = 0; i < myD.length; i++) {
 						if (my.dataset.yyyy) {
 							if (myD[i].innerHTML == my.dataset.dd && myD[i].parentNode.parentNode.parentNode.dataset.m == (my.dataset.mm - 1) && year == my.dataset.yyyy) {
+								myD[i].abbr = my.dataset.cls;
 								myD[i].title = my.dataset.text;
 								if (my.dataset.link) {
 									myD[i].innerHTML = '<a href="' + my.dataset.link + '" class="fancy">' + myD[i].innerHTML + '</a>';
@@ -67,6 +68,7 @@ $(document).ready(function(){
 							}
 						}else {
 							if (myD[i].innerHTML == my.dataset.dd && myD[i].parentNode.parentNode.parentNode.dataset.m == (my.dataset.mm - 1)) {
+								myD[i].abbr = my.dataset.cls;
 								myD[i].title = my.dataset.text;
 								if (my.dataset.link) {
 									myD[i].innerHTML = '<a href="' + my.dataset.link + '" class="fancy">' + myD[i].innerHTML + '</a>';
